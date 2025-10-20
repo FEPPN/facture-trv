@@ -1,1 +1,112 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Simulation d'Offre</title>
+    <!-- Chargement du CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration personnalisée de Tailwind pour la couleur Papernest -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Un bleu/cyan vif inspiré des couleurs Papernest
+                        'papernest-teal': '#00C2CC',
+                        'papernest-dark': '#0097a7',
+                        // Couleurs d'accentuation pour les icônes
+                        'feature-success': '#38A169',
+                        'feature-failure': '#E53E3E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Importation de la police Inter pour une esthétique moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Styles personnalisés pour améliorer l'aspect */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
+
+    <!-- Conteneur principal de la carte de prix -->
+    <div class="w-full max-w-sm bg-white rounded-xl overflow-hidden card-shadow border border-gray-100">
+
+        <!-- En-tête de la carte (Marque/Logo) -->
+        <header class="p-6 border-b border-gray-100">
+            <!-- Remplacement du logo Primeo par un titre simple avec la couleur Papernest -->
+            <div class="flex items-center justify-center">
+                <!-- Icône SVG simple (similaire à un logo de service) -->
+                <svg class="w-8 h-8 mr-2 text-papernest-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <h2 class="text-2xl font-bold text-gray-800">
+                    <span class="text-papernest-teal">PAPIER</span><span class="text-gray-700">NEST</span>
+                </h2>
+            </div>
+            <p class="mt-2 text-center text-sm font-semibold text-gray-600">Offre Fixe -20%</p>
+        </header>
+
+        <!-- Corps principal de la carte (Prix et Économies) -->
+        <div class="p-6 text-center">
+            
+            <!-- Prix Mensuel Principal -->
+            <div class="text-5xl font-extrabold text-gray-900 leading-tight mt-2">
+                272 €/mois
+            </div>
+            <p class="text-sm text-gray-500 mt-1 mb-6">
+                soit 3258 €/an TTC
+            </p>
+
+            <!-- Section Économies -->
+            <div class="p-4 bg-papernest-teal bg-opacity-10 rounded-lg">
+                <p class="text-lg font-bold text-papernest-dark">
+                    598 € économisés par an*
+                </p>
+            </div>
+
+            <!-- Liste des caractéristiques (Check/Cross) -->
+            <div class="mt-6 space-y-3 text-left">
+                
+                <!-- Caractéristique Négative (Croix Rouge) -->
+                <div class="flex items-center">
+                    <span class="text-feature-failure mr-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </span>
+                    <span class="text-gray-700">Électricité verte non-incluse</span>
+                </div>
+                
+                <!-- Caractéristique Positive (Coche Verte) -->
+                <div class="flex items-center">
+                    <span class="text-feature-success mr-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </span>
+                    <span class="text-gray-700">Offre avec des prix bloqués</span>
+                </div>
+
+                <!-- Bouton d'Action -->
+                <button class="w-full mt-6 py-3 px-4 bg-papernest-teal text-white font-semibold rounded-lg shadow-md hover:bg-papernest-dark transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-papernest-teal focus:ring-opacity-50">
+                    Afficher les détails
+                    <svg class="inline-block w-4 h-4 ml-1 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Pied de page (Mentions Légales) -->
+        <footer class="p-6 pt-4 text-xs text-gray-400 border-t border-gray-100">
+            <p>* : économies / surcoûts par rapport au tarif réglementé. Tarifs vérifiés au 01/10/2025.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
